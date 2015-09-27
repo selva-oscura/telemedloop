@@ -1,0 +1,52 @@
+<template name="layout">
+		{{> header}}
+		{{#if currentUser}}
+			<p>logged in</p>
+		{{/if}}
+		{{> yield}}
+		{{> footer}}
+<!-- 	{{#ionBody}}
+	{{/ionBody}} -->
+</template>
+
+
+<template name="header">
+	<header>
+		<div class="bar bar-header bar-positive">
+			<div class="button-bar">
+				<button class="button button-clear">
+					<img id="logo" class="left" src="mediloop.png" alt="mediloop logo">
+				</button>
+				<button class="button button-clear">
+					{{> loginButtons}}
+					<div class="right">
+					</div>
+				</button>
+			</div>
+		</div>
+		<div class="bar bar-subheader bar-positive">
+			<div class="button-bar">
+			  <a class="button button-clear">First</a>
+			  <a class="button button-clear">Second</a>
+			  <a class="button button-clear">Third</a>
+			</div>
+		</div>
+	</header>
+	<div class="clear"></div>
+</template>
+
+
+<template name="footer">
+	<div class="bar bar-footer bar-dark">
+		<div class="button-bar">
+			<button class="button button-clear">About Us</button>
+			<button class="button button-clear">&copy; Medloop</button>
+			<button class="button button-clear">Contact Us</button>
+		</div>
+	</div>
+</template>
+
+
+<template name = "loading">
+	{{>spinner}}
+</template>
