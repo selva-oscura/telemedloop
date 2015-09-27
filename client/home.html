@@ -1,3 +1,46 @@
 <template name="home">
-	<h2>And now at home</h2>
+	{{#if roleUnspecified}}
+		<h2>Welcome to TeleMediLoop</h2>
+		<h3>One quick question and we can get started.</h3>
+		<h3>Who are you?</h3>
+		<form id="role">
+			<div class="list">
+				<label class="item item-radio">
+					<input type="radio" name="role" value="client">
+						<div class="item-content">
+							A Patient / Family Member
+						</div>
+					<i class="radio-icon ion-checkmark"></i>
+				</label>
+				<label class="item item-radio">
+					<input type="radio" name="role" value="provider">
+						<div class="item-content">
+							A Doctor / Nurse / Medical Support Person
+						</div>
+					<i class="radio-icon ion-checkmark"></i>
+				</label>
+			</div>
+		</form>
+	{{else}}
+		{{#if roleCheck 'client'}}
+			<div class="home-left">
+				{{> contacts}}
+
+			</div>
+
+		{{/if}}
+		{{#if roleCheck 'provider'}}
+			<div class="home-left">
+				{{> appointments}}
+			</div>
+		{{/if}}
+		<div class="home-right">
+			<div class="call-button">
+				<i class="icon ion-ios-telephone"></i>
+			</div>
+			<div class="call-button">
+				<i class="icon ion-ios-videocam"></i>
+			</div>
+		</div>
+	{{/if}}
 </template>

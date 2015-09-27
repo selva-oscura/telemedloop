@@ -24,5 +24,19 @@ p,h1,h2,h3,h4,h5,h6,a,label{
 }
 
 .content{
-	padding:48px 12px 12px 12px;
+	padding:60px 12px 12px 12px;
+}
+
+table{
+	margin-top:18px;
+	width:100%;
+}
+
+thead tr{
+	border-bottom: 2px solid #606060;;
+	font-size: 1.5em;
+}
+
+tbody tr{
+	border-bottom: 1px solid #606060;;
 }

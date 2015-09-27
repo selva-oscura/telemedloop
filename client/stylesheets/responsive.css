@@ -1,5 +1,18 @@
+.at-form{
+	width:90%;
+	margin: 0 4%;
+}
+.home-left, .home-right{
+	width:90%;
+	margin: 0 4%;
+}
+
 @media all and (min-width : 400px){
 	.at-form{
+		width:90%;
+		margin: 0 4%;
+	}
+	.home-left, .home-right{
 		width:90%;
 		margin: 0 4%;
 	}
@@ -13,6 +26,10 @@
 		width:80%;
 		margin: 0 9%;
 	}
+	.home-left, .home-right{
+		width:90%;
+		margin: 0 4%;
+	}
 /*	.container{
 		background-color: orange;
 	}*/
@@ -22,6 +39,31 @@
 	.at-form{
 		width:60%;
 		margin: 0 9% 0 30%;
+	}
+	.home-left{
+		width:65%;
+		margin: 0 2% 0 4%;
+		float:left;
+	}
+	.home-right{
+		width: 20%;
+		margin: 0 4% 0 2%;
+		float:left;
+		border:1px solid gold;
+	}
+	.home-right .call-button{
+		width:150px;
+		height:150px;
+		background-color: green;
+		padding:24px 36px;
+		margin: 24px;
+		border-radius: 50%;
+		float:left;
+	}
+	.home-right i{
+		font-size: 8em;
+		color: white;
+		text-align:center;
 	}
 
 /*	.container{
@@ -35,6 +77,18 @@
 		width:40%;
 		margin-right:10%;
 	}
+	.home-left{
+		width:55%;
+		margin: 0 2% 0 4%;
+		float:left;
+	}
+	.home-right{
+		width: 30%;
+		margin: 0 4% 0 2%;
+		float:left;
+		border:1px solid gold;
+	}
+
 /*	.container{
 		background-color: green;
 	}*/
