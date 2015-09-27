@@ -1,0 +1,20 @@
+p,h1,h2,h3,h4,h5,h6,a,label{
+	font-family: 'Raleway', sans-serif;
+	font-weight:400;
+	color:#606060;
+}
+
+#header-bar, #nav-bar{
+	background-color: #10486A;
+	border:1px solid #10486A;
+}
+
+#header-bar h1, #nav-bar h2, #footer a, #footer p{
+	color:#ffffff;
+	font-size:1.7em;
+	text-shadow: 0px 0px 12px rgba(255,255,255,0);
+}
+
+.active{
+	text-shadow: 0px 0px 12px rgba(255,255,255,.3) !important;
+}

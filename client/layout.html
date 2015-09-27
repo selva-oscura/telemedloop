@@ -1,47 +1,61 @@
 <template name="layout">
+	{{#ionBody}}
 		{{> header}}
-		{{#if currentUser}}
-			<p>logged in</p>
-		{{/if}}
-		{{> yield}}
+		{{#ionContent}}
+			<div class="content">
+				{{> yield}}
+			</div>
+		{{/ionContent}}
 		{{> footer}}
-<!-- 	{{#ionBody}}
-	{{/ionBody}} -->
+	{{/ionBody}}
 </template>
 
 
 <template name="header">
 	<header>
-		<div class="bar bar-header bar-positive">
-			<div class="button-bar">
-				<button class="button button-clear">
-					<img id="logo" class="left" src="mediloop.png" alt="mediloop logo">
-				</button>
-				<button class="button button-clear">
-					{{> loginButtons}}
+		<div class="bar bar-header bar-positive" id="header-bar">
+			<div class="row">
+				<div class="col">
+<!-- 					<img id="logo" class="left" src="mediloop.png" alt="mediloop logo"> -->
+					<h1 class="headline text-left">TeleMediLoop</h1>
+				</div>
+				<div class="col">
 					<div class="right">
+						{{#if currentUser}}
+							{{> atNavButton}}
+						{{/if}}
 					</div>
-				</button>
+				</div>
 			</div>
 		</div>
-		<div class="bar bar-subheader bar-positive">
-			<div class="button-bar">
-			  <a class="button button-clear">First</a>
-			  <a class="button button-clear">Second</a>
-			  <a class="button button-clear">Third</a>
+		{{#if currentUser}}
+			<div class="bar bar-subheader bar-positive" id="nav-bar">
+				<div class="button-bar">
+<!--				<li class="{{activeRouteClass 'index'}} brand">
+						<a href="/">
+							<img src="img/shoe-logo-white.svg" class="active-logo" alt="Shines' shoe logo">
+							<img src="img/shoe-logo.svg" class="inactive-logo" alt="Shines' shoe logo">
+							<span>Shines</span>
+						</a>
+					</li> -->
+					<a class="button button-clear {{activeRouteClass 'home'}}" href="home">Home</a>
+					<a class="button button-clear {{activeRouteClass 'contacts'}}" href="contacts">Contact List</a>
+					<a class="button button-clear {{activeRouteClass 'scheduler'}}" href="scheduler">Scheduler</a>
+					<a class="button button-clear {{activeRouteClass 'settings'}}" href="settings">Settings</a>
+				</div>
 			</div>
-		</div>
+		{{/if}}
 	</header>
 	<div class="clear"></div>
 </template>
 
 
 <template name="footer">
-	<div class="bar bar-footer bar-dark">
+	<div class="bar bar-footer bar-dark" id="footer">
 		<div class="button-bar">
-			<button class="button button-clear">About Us</button>
-			<button class="button button-clear">&copy; Medloop</button>
-			<button class="button button-clear">Contact Us</button>
+			<a class="button button-clear {{activeRouteClass 'about'}}" href="about_us">About Us</a>
+			<p class="button button-clear">&copy; Medloop, 2015</p>
+			<a class="button button-clear {{activeRouteClass 'contact'}}" href="contact_us">Contact Us</a>
 		</div>
 	</div>
 </template>

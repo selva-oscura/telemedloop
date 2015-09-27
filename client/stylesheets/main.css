@@ -22,3 +22,7 @@ p,h1,h2,h3,h4,h5,h6,a,label{
 #logo{
 	height: 48px;
 }
+
+.content{
+	padding:48px 12px 12px 12px;
+}
