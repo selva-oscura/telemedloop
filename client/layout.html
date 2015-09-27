@@ -1,13 +1,18 @@
+<body>
+	{{> layout}}
+</body>
 <template name="layout">
 	{{#ionBody}}
 		{{> header}}
 		{{#ionContent}}
 			<div class="content">
 				{{> yield}}
+				{{> voiceCall}}
 			</div>
 		{{/ionContent}}
 		{{> footer}}
 	{{/ionBody}}
+
 </template>
 
 
@@ -63,4 +68,43 @@
 
 <template name = "loading">
 	{{>spinner}}
+</template>
+
+<template name = "voiceCall">
+	<div>
+		<label for="username">Username</label>
+		<input type="text" id="username" />
+		<label for="password">Password</label>
+		<input type="text" id="password" />
+		<button id="signUp">Fake Sign Up</button>
+		<button id="signIn">Fake Sign In</button>
+	</div>
+	<div>
+		<label for="user2">User to Call</label>
+		<select id="contacts">
+			<option value="">Choose a Contact</option>
+			<option value="charlie">Charlie</option>
+			<option value="carol">Carol</option>
+			<option value="erika">Erika</option>
+		</select>
+		<button id="voiceCall">Voice Call</button>
+	</div>
+	<div>
+		<button id="answer">Answer Call</button>
+		<button id="hangup">Hang Up</button>
+	</div>
+	<div>
+		<audio id="incoming" autoplay></audio>
+		<audio id="ringback" src='ringback.wav' loop></audio>
+		<audio id="ringtone" src='phone_ring.wav' loop></audio>
+
+		<video id="outgoing" autoplay muted></video>
+		<video id="incoming" autoplay></video>
+	</div>
+	<div class="clearfix"></div>
+	<div id="callLog">
+	</div>
+	<div class="error">
+	</div>
+
 </template>
