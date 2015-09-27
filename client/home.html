@@ -41,6 +41,8 @@
 			</div>
 		</div>
 		<div class="clear"></div>
-		{{> videoSpace}}
+		{{#if showVideo}}
+			{{> videoSpace}}
+		{{/if}}
 	{{/if}}
 </template>

@@ -10,12 +10,21 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
+			{{#each appointments}}
+				<tr>
+					<td>{{timeslot}}</td>
+					<td>{{clientName}}<br />Case#: {{clientCaseNumber}}</td>
+					<td>{{appointmentReason}}</td>
+					<td class="appointments">
+						<div class="call-button start-call">
+							<i class="icon ion-ios-telephone"></i>
+						</div>
+						<div class="call-button start-video">
+							<i class="icon ion-ios-videocam"></i>
+						</div>
+					</td>
+				</tr>
+			{{/each}}
 		</tbody>
 	</table>
 </template>

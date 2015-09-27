@@ -32,6 +32,19 @@
 	float:left;
 }
 
+.appointments .call-button{
+	width:30px;
+	height:30px;
+	font-size: 2em;
+	background-color: green;
+	padding:4px 4px;
+	margin-top:6px;
+	margin-left: 24px;
+	border-radius: 50%;
+	float:left;
+	color:white;	
+}
+
 @media all and (min-width : 400px){
 	.at-form{
 		width:90%;

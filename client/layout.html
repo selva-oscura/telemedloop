@@ -1,18 +1,14 @@
-<body>
-	{{> layout}}
-</body>
 <template name="layout">
 	{{#ionBody}}
 		{{> header}}
 		{{#ionContent}}
 			<div class="content">
 				{{> yield}}
-				{{> voiceCall}}
 			</div>
 		{{/ionContent}}
+		{{> voiceCall}}
 		{{> footer}}
 	{{/ionBody}}
-
 </template>
 
 
