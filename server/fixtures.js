@@ -13,3 +13,4 @@ if(Appointments.find().count()===0){
 		console.log(appointmentId);
 	}
 }
+

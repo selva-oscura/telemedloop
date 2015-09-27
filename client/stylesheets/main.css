@@ -40,3 +40,16 @@ thead tr{
 tbody tr{
 	border-bottom: 1px solid #606060;;
 }
+
+.vid-div{
+	height:90vh;
+	width:100%;
+}
+.vid-space{
+	height:75vh;
+	width:100%;
+}
+.vid-console{
+	height:100px;
+	width:100%;
+}
