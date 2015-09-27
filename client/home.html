@@ -22,25 +22,27 @@
 			</div>
 		</form>
 	{{else}}
-		{{#if roleCheck 'client'}}
-			<div class="home-left">
-				{{> contacts}}
+		{{#unless showVideo}}
+			{{#if roleCheck 'client'}}
+				<div class="home-left">
+					{{> contacts}}
+				</div>
+			{{/if}}
+			{{#if roleCheck 'provider'}}
+				<div class="home-left">
+					{{> appointments}}
+				</div>
+			{{/if}}
+			<div class="home-right">
+				<div class="call-button start-call">
+					<i class="icon ion-ios-telephone"></i>
+				</div>
+				<div class="call-button start-video">
+					<i class="icon ion-ios-videocam"></i>
+				</div>
 			</div>
-		{{/if}}
-		{{#if roleCheck 'provider'}}
-			<div class="home-left">
-				{{> appointments}}
-			</div>
-		{{/if}}
-		<div class="home-right">
-			<div class="call-button start-call">
-				<i class="icon ion-ios-telephone"></i>
-			</div>
-			<div class="call-button start-video">
-				<i class="icon ion-ios-videocam"></i>
-			</div>
-		</div>
-		<div class="clear"></div>
+			<div class="clear"></div>
+		{{/unless}}
 		{{#if showVideo}}
 			{{> videoSpace}}
 		{{/if}}

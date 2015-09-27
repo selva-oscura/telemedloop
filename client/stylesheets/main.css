@@ -42,7 +42,7 @@ tbody tr{
 }
 
 .vid-div{
-	height:90vh;
+	min-height:85vh;
 	width:100%;
 }
 .vid-space{

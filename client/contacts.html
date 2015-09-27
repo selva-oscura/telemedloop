@@ -1,3 +1,26 @@
 <template name="contacts">
-	<h2>Wanting, wanting, wanting contact (with apologies to Peter Gabriel)</h2>
+	<h3>Contacts</h3>
+	<table>
+		<thead>
+			<tr>
+				<th class="text-left">Contact</th>
+				<th class="text-left">Call</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each people}}
+				<tr>
+					<td>{{contactName}}</td>
+					<td class="call-triggers">
+						<div class="call-button start-call">
+							<i class="icon ion-ios-telephone"></i>
+						</div>
+						<div class="call-button start-video">
+							<i class="icon ion-ios-videocam"></i>
+						</div>
+					</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
 </template>

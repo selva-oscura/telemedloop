@@ -8,3 +8,13 @@ UI.registerHelper("roleCheck", function(role) {
 	}
     return false;
 });
+
+
+UI.registerHelper("showVideo", function(){
+	var showVideo = Session.get('showVideo');
+	console.log('showVideo', showVideo);
+	if(showVideo === undefined){
+		return false
+	}
+	return showVideo;
+});

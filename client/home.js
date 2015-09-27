@@ -71,7 +71,7 @@
 // }
 
 
-var  sinchClient = new SinchClient({
+var sinchClient = new SinchClient({
 	applicationKey: 'ee26a540-70e4-430a-aa7b-385966cbdcec',
 	capabilities: {calling: true, video: true},
 	supportActiveConnection: true,
@@ -153,15 +153,11 @@ Template.home.helpers({
 			if(user.profile){
 				if(user.profile.role){
 					var userObj = {
-						username: user.emails[0],
+						username: user.emails[0].address,
 						password: user._id
 					}
-					// sinchCall.call.sinchClient.start(userObj, function(){
-					//   console.log("User logged in");
-					// }).fail(function(){
-					//   alert("Error credential, sign in again");
-					// });
-					call.sinchClient.start(userObj, function(){
+					console.log(userObj);
+					sinchClient.start(userObj, function(){
 					  console.log("User logged in");
 					}).fail(function(){
 					  alert("Error credential, sign in again");
@@ -170,29 +166,17 @@ Template.home.helpers({
 				}
 			}
 			var userObj = {
-				username: user.emails[0],
+				username: user.emails[0].address,
 				password: user._id
 			}
-			// sinchCall.call.sinchClient.newUser(userObj, function(){
-			// 	console.log("New user created to Sinch");
-			// }).fail(function(){
-			// 	alert("Failed to create user to Sinch");
-			// });
-			// return true;
-			call.sinchClient.newUser(userObj, function(){
+			console.log(userObj);
+			sinchClient.newUser(userObj, function(){
 				console.log("New user created to Sinch");
 			}).fail(function(){
 				alert("Failed to create user to Sinch");
 			});
 			return true;
 		}
-	},showVideo: function(){
-		// var showVideo = Session.get('showVideo');
-		// console.log(showVideo);
-		// if(showVideo){
-		// 	return showVideo;
-		// });
-		return false
 	}
 });
 
