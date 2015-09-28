@@ -34,12 +34,28 @@
 				</div>
 			{{/if}}
 			<div class="home-right">
-				<div class="call-button start-call">
-					<i class="icon ion-ios-telephone"></i>
-				</div>
-				<div class="call-button start-video">
-					<i class="icon ion-ios-videocam"></i>
-				</div>
+				{{#if incomingCall}}
+					You have an incoming Call.
+					Do you wish to answer?
+					<form id="answer">
+						<div class="list">
+							<label class="item item-radio">
+								<input type="radio" name="answer" value="yes">
+									<div class="item-content">
+										Yes
+									</div>
+								<i class="radio-icon ion-checkmark"></i>
+							</label>
+							<label class="item item-radio">
+								<input type="radio" name="answer" value="no">
+									<div class="item-content">
+										No
+									</div>
+								<i class="radio-icon ion-checkmark"></i>
+							</label>
+						</div>
+					</form>
+				{{/if}}
 			</div>
 			<div class="clear"></div>
 		{{/unless}}

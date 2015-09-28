@@ -177,6 +177,8 @@ Template.home.helpers({
 			});
 			return true;
 		}
+	},incomingCall: function(){
+		return true;
 	}
 });
 
@@ -188,8 +190,21 @@ Template.home.events({
 		console.log('role',role);
 		Meteor.users.update(userId, {$set: {profile: {role:role}}});
 	},
-	'change form': function(e){
+	'change #role': function(e){
 		$('#role').submit();
+	},'submit #answer': function(e){
+		e.preventDefault();
+		var answer = $(e.target).find('[name=answer]:checked').val();
+		console.log('answer',answer);
+		if(answer==="yes"){
+			Session.set('showVideo', true);
+		}else{
+			Session.set('showVideo', false);
+		}
+		// Session.set('showVideo', true);
+	},
+	'change #answer': function(e){
+		$('#answer').submit();
 	}
 });
 
